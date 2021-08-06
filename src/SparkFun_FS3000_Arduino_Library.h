@@ -61,16 +61,17 @@ public:
 	//   defaults to Wire, but if hardware supports it, can use other TwoWire ports.
 	bool begin(TwoWire &wirePort = Wire); //By default use Wire port
 	bool isConnected();
-  int readRaw();
+  uint16_t readRaw();
   float readMetersPerSecond();
   float readMilesPerHour();
+  bool checksum(uint8_t* _buff, bool debug = false);
 	
 private:
 	TwoWire *_i2cPort;
-  byte _buff[5] ;		//	5 Bytes Buffer
-	void readData(byte* _buff);
-  bool checksum(byte* _buff, bool debug = false);
-  void printHexByte(byte x);
+  uint8_t _buff[5] ;		//	5 Bytes Buffer
+	void readData(uint8_t* _buff);
+
+  void printHexByte(uint8_t x);
 };
 
 #endif // __SparkFun_FS3000_H__ //

@@ -55,17 +55,17 @@ boolean FS3000::isConnected()
 
 /*************************** READ RAW **************************/
 /*  Read from sensor, checksum, return raw data (409-3686)     */
-int FS3000::readRaw() {
+uint16_t FS3000::readRaw() {
     readData(_buff);
     bool checksum_result = checksum(_buff, false); // debug off
     if(checksum_result == false) // checksum error
     {
-      return false; 
+      return 9999; 
     }
     
-    int airflowRaw = 0;
-    byte data_high_byte = _buff[1];
-    byte data_low_byte = _buff[2];
+    uint16_t airflowRaw = 0;
+    uint8_t data_high_byte = _buff[1];
+    uint8_t data_low_byte = _buff[2];
 
     // The flow data is a 12-bit integer. 
     // Only the least significant four bits in the high byte are valid.
@@ -151,16 +151,18 @@ float FS3000::readMilesPerHour() {
 
 /*************************** READ DATA **************************/
 /*                Read 5 bytes from sensor, put it at a pointer (given as argument)                  */
-void FS3000::readData(byte* _buff) {
+void FS3000::readData(uint8_t* _buff) {
     // Wire.reqeustFrom contains the beginTransmission and endTransmission in it. 
-	Wire.requestFrom(FS3000_DEVICE_ADDRESS, 5);  // Request 5 Bytes
+	Wire.requestFrom(FS3000_DEVICE_ADDRESS, 4);  // Request 4 Bytes
 
-	int i = 0;
+  uint8_t i = 0;
 	while(Wire.available())
 	{
 		_buff[i] = Wire.read();				// Receive Byte
-		i++;
+    i += 1;
 	}
+  //Serial.print("i:");
+  //Serial.println(i);
 }
 
 /****************************** CHECKSUM *****************************
@@ -174,24 +176,24 @@ void FS3000::readData(byte* _buff) {
  * [4]generic checksum data
  */
 
-bool FS3000::checksum(byte* _buff, bool debug) {
-    byte sum = 0;
+bool FS3000::checksum(uint8_t* _buff, bool debug) {
+    uint8_t sum = 0;
     for (int i = 1; i <= 4; i++) {
-        sum += _buff[i];
+        sum += uint8_t(_buff[i]);
     }
 
     if(debug) Serial.print("Sum of received data bytes                       = ");
     if(debug) printHexByte(sum);
 
-    byte calculated_cksum = -sum;
+    uint8_t calculated_cksum = -sum;
     if(debug) Serial.print("Calculated checksum                              = ");
     if(debug) printHexByte(calculated_cksum);
     
-    byte crcbyte = _buff[0];
+    uint8_t crcbyte = _buff[0];
     if(debug) Serial.print("Received checksum byte                           = ");
     if(debug) printHexByte(crcbyte);
     
-    byte overall = sum+crcbyte;
+    uint8_t overall = sum+crcbyte;
     if(debug) Serial.print("Sum of received data bytes and received checksum = ");
     if(debug) printHexByte(overall);
     if(debug) Serial.println();
@@ -203,7 +205,7 @@ bool FS3000::checksum(byte* _buff, bool debug) {
     return true;
 }
 
-void FS3000::printHexByte(byte x)
+void FS3000::printHexByte(uint8_t x)
 {
     Serial.print("0x");
     if (x < 16) {
