@@ -1,18 +1,24 @@
-SparkFun Tsunami Qwiic Arduino Library
+SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) Arduino Library
 ========================================
 
-[![SparkFun Tsunami Super WAV Trigger (Qwiic)](https://cdn.sparkfun.com/assets/parts/1/7/4/8/8/18159-SparkFun_Tsunami_Super_WAV_Trigger__Qwiic_-01.jpg)](https://www.sparkfun.com/products/18159)
+[![SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic)](https://cdn.sparkfun.com/assets/parts/1/7/4/8/8/18159-SparkFun_Tsunami_Super_WAV_Trigger__Qwiic_-01.jpg)](https://www.sparkfun.com/products/18377)
 
-[*SparkFun Tsunami Super WAV Trigger (Qwiic) (WIG-18159)*](https://www.sparkfun.com/products/18159)
+[*SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) (SEN-18377)*](https://www.sparkfun.com/products/18377)
 
-Tsunami is a polyphonic Wav file player with 4 stereo (or 8 mono) outputs.  Wav files can be triggered using the 16 onboard contacts, via MIDI, serial connection or Qwiic to a PC or other microcontroller.
+The SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) makes it easy to use the Renesas FS3000 module. The FS3000 is a surface-mount type air velocity module utilizing a
+MEMS thermopile-based sensor.
 
-Note, this Arduino Library is capable of controlling the Tsunami Super WAV Trigger (Qwiic) via I2C commands using a Qwiic Cable.
-If you'd like to control your Tsunami using the Serial interface, then please check out the following separate Arduino Library here:
-https://github.com/robertsonics/Tsunami-Arduino-Serial-Library
+The FS3000 features a digital output with 12-bit resolution. The
+sensor comprises a “solid” thermal isolation technology and siliconcarbide coating to protect it from abrasive wear and water
+condensation.
+
+The FS3000 features a compact design fit for low profile
+enclosures.
+
+There are two versions of this sensor with different upper ranges (1005/1015). This SparkFun product utilizes the 1005 version which can sense 0-7.23m/s (0-16.17mph).
 
 SparkFun labored with love to create this code. Feel like supporting open source hardware? 
-Buy a [board](https://www.sparkfun.com/products/18159) from SparkFun!
+Buy a [board](https://www.sparkfun.com/products/18377) from SparkFun!
 
 Repository Contents
 -------------------
@@ -26,7 +32,7 @@ Documentation
 --------------
 
 * **[Installing an Arduino Library Guide](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)** - Basic information on how to install an Arduino library.
-* **[Product Repository](https://github.com/sparkfun/SparkFun_Tsunami_Super_WAV_Trigger_Qwiic)** - Main repository (including hardware files and example WAV files)
+* **[Product Repository](https://github.com/sparkfun/SparkFun_Air_Velocity_Sensor_FS3000_Qwiic)** - Main repository (including hardware files and example WAV files)
 
 License Information
 -------------------
