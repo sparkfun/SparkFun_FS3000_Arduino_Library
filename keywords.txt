@@ -12,5 +12,5 @@ FS3000	KEYWORD1
 
 begin	KEYWORD2
 readRaw	KEYWORD2
-readMetersPerSeconds	KEYWORD2
+readMetersPerSecond	KEYWORD2
 readMilesPerHour	KEYWORD2
