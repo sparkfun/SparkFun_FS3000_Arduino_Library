@@ -11,7 +11,7 @@
 	Hardware Platform: SparkFun Redboard Qwiic
 	SparkFun Air Velocity Sensor Breakout - FS3000 (Qwicc) Version: 1.0
 
-  Artemis Redboard (Core v2.1.0) 
+  Artemis Redboard @ 400KHz (Core v2.1.0) 
   (note, v2.1.1 has a known issue with clock stretching at 100KHz)
 
   Do you like this library? Help support SparkFun. Buy a board!
