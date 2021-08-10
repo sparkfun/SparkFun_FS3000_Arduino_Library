@@ -64,13 +64,12 @@ public:
   uint16_t readRaw();
   float readMetersPerSecond();
   float readMilesPerHour();
-  bool checksum(uint8_t* _buff, bool debug = false);
 	
 private:
 	TwoWire *_i2cPort;
   uint8_t _buff[5] ;		//	5 Bytes Buffer
-	void readData(uint8_t* _buff);
-
+	void readData(uint8_t* buffer_in);
+  bool checksum(uint8_t* data_in, bool debug = false);
   void printHexByte(uint8_t x);
 };
 

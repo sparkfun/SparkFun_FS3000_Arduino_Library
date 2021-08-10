@@ -60,7 +60,7 @@ uint16_t FS3000::readRaw() {
     bool checksum_result = checksum(_buff, false); // debug off
     if(checksum_result == false) // checksum error
     {
-      return 9999; 
+      //return 9999; 
     }
     
     uint16_t airflowRaw = 0;
@@ -151,14 +151,14 @@ float FS3000::readMilesPerHour() {
 
 /*************************** READ DATA **************************/
 /*                Read 5 bytes from sensor, put it at a pointer (given as argument)                  */
-void FS3000::readData(uint8_t* _buff) {
+void FS3000::readData(uint8_t* buffer_in) {
     // Wire.reqeustFrom contains the beginTransmission and endTransmission in it. 
-	Wire.requestFrom(FS3000_DEVICE_ADDRESS, 4);  // Request 4 Bytes
+	Wire.requestFrom(FS3000_DEVICE_ADDRESS, 5);  // Request 5 Bytes
 
   uint8_t i = 0;
 	while(Wire.available())
 	{
-		_buff[i] = Wire.read();				// Receive Byte
+		buffer_in[i] = Wire.read();				// Receive Byte
     i += 1;
 	}
   //Serial.print("i:");
@@ -176,27 +176,39 @@ void FS3000::readData(uint8_t* _buff) {
  * [4]generic checksum data
  */
 
-bool FS3000::checksum(uint8_t* _buff, bool debug) {
+bool FS3000::checksum(uint8_t* data_in, bool debug) {
     uint8_t sum = 0;
     for (int i = 1; i <= 4; i++) {
-        sum += uint8_t(_buff[i]);
+        sum += uint8_t(data_in[i]);
+    }
+  
+    if(debug)
+    {
+      for(int i = 0 ; i < 5 ; i++)
+      {
+        Serial.print(_buff[i], HEX);
+        Serial.print(" ");
+      }
+      Serial.print("\n\rSum of received data bytes                       = ");
+      printHexByte(sum);
     }
 
-    if(debug) Serial.print("Sum of received data bytes                       = ");
-    if(debug) printHexByte(sum);
-
-    uint8_t calculated_cksum = -sum;
-    if(debug) Serial.print("Calculated checksum                              = ");
-    if(debug) printHexByte(calculated_cksum);
-    
-    uint8_t crcbyte = _buff[0];
-    if(debug) Serial.print("Received checksum byte                           = ");
-    if(debug) printHexByte(crcbyte);
-    
+    sum %= 256;
+    //uint8_t calculated_cksum = -sum;
+    uint8_t calculated_cksum = (~(sum) + 1);
+    uint8_t crcbyte = data_in[0];
     uint8_t overall = sum+crcbyte;
-    if(debug) Serial.print("Sum of received data bytes and received checksum = ");
-    if(debug) printHexByte(overall);
-    if(debug) Serial.println();
+
+    if(debug) 
+    {
+      Serial.print("Calculated checksum                              = ");
+      printHexByte(calculated_cksum);
+      Serial.print("Received checksum byte                           = ");
+      printHexByte(crcbyte);
+      Serial.print("Sum of received data bytes and received checksum = ");
+      printHexByte(overall);
+      Serial.println();
+    }
 
     if (overall != 0x00)
     {
