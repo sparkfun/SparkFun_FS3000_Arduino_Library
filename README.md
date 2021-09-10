@@ -1,7 +1,7 @@
 SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) Arduino Library
 ========================================
 
-[![SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic)](https://cdn.sparkfun.com/assets/parts/1/7/4/8/8/18159-SparkFun_Tsunami_Super_WAV_Trigger__Qwiic_-01.jpg)](https://www.sparkfun.com/products/18377)
+[![SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic)](https://cdn.sparkfun.com//assets/parts/1/7/7/5/9/18377-SparkFun_Air_Velocity_Sensor_Breakout_-_FS3000__Qwiic_01.jpg)](https://www.sparkfun.com/products/18377)
 
 [*SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) (SEN-18377)*](https://www.sparkfun.com/products/18377)
 
