@@ -39,7 +39,7 @@ FS3000::FS3000()
 
 //Initializes the sensor (no settings to adjust)
 //Returns false if sensor is not detected
-boolean FS3000::begin(TwoWire &wirePort)
+bool FS3000::begin(TwoWire &wirePort)
 {
   	_i2cPort = &wirePort;
   	if (isConnected() == false) // Check for sensor by verifying ACK response
@@ -48,7 +48,7 @@ boolean FS3000::begin(TwoWire &wirePort)
 }
 
 //Returns true if I2C device ack's
-boolean FS3000::isConnected()
+bool FS3000::isConnected()
 {
   	_i2cPort->beginTransmission((uint8_t)FS3000_DEVICE_ADDRESS);
   	if (_i2cPort->endTransmission() != 0)
