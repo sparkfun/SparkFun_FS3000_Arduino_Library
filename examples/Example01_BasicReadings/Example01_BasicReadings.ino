@@ -60,6 +60,13 @@ void setup()
     Serial.println("The sensor did not respond. Please check wiring.");
     while(1); //Freeze
   }
+
+  // Set the range to match which version of the sensor you are using.
+  // FS3000-1005 (0-7.23 m/sec) --->>>  AIRFLOW_RANGE_7_MPS
+  // FS3000-1015 (0-15 m/sec)   --->>>  AIRFLOW_RANGE_15_MPS
+  fs.setRange(AIRFLOW_RANGE_7_MPS);
+  //fs.setRange(AIRFLOW_RANGE_15_MPS); 
+
   Serial.println("Sensor is connected properly.");
 }
 

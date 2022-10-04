@@ -51,6 +51,8 @@
                                 // [3]generic checksum data, [4]generic checksum data
 
 #define FS3000_DEVICE_ADDRESS 0x28     // Note, the FS3000 does not have an adjustable address.
+#define AIRFLOW_RANGE_7_MPS 0x00       // FS3000-1005 has a range of 0-7.23 meters per second
+#define AIRFLOW_RANGE_15_MPS 0x01      // FS3000-1015 has a range of 0-15 meters per second
 
 class FS3000
 {
@@ -67,6 +69,7 @@ public:
   uint16_t readRaw();
   float readMetersPerSecond();
   float readMilesPerHour();
+  void setRange(uint8_t range);
 	
 private:
 	TwoWire *_i2cPort;
@@ -74,6 +77,9 @@ private:
 	void readData(uint8_t* buffer_in);
   bool checksum(uint8_t* data_in, bool debug = false);
   void printHexByte(uint8_t x);
+  uint8_t _range = AIRFLOW_RANGE_7_MPS; // defaults to FS3000-1005 range
+  float _mpsDataPoint[13] = {0, 1.07, 2.01, 3.00, 3.97, 4.96, 5.98, 6.99, 7.23}; // defaults to FS3000-1005 datapoints
+  int _rawDataPoint[13] =  {409, 915, 1522, 2066, 2523, 2908, 3256, 3572, 3686}; // defaults to FS3000-1005 datapoints
 };
 
 #endif // __SparkFun_FS3000_H__ //

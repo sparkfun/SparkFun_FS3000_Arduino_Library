@@ -14,3 +14,11 @@ begin	KEYWORD2
 readRaw	KEYWORD2
 readMetersPerSecond	KEYWORD2
 readMilesPerHour	KEYWORD2
+setRange	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+AIRFLOW_RANGE_7_MPS	LITERAL1
+AIRFLOW_RANGE_15_MPS	LITERAL1
