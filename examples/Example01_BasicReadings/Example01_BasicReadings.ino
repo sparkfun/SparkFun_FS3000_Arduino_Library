@@ -13,19 +13,22 @@
   Development environment specifics:
 
   IDE: Arduino 1.8.15
-  Hardware Platform: SparkFun Redboard Qwiic
-  SparkFun Air Velocity Sensor Breakout - FS3000 (Qwicc) Version: 1.0
+  Hardware Platform: SparkFun RedBoard Qwiic
+  SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) Version: 1.0
 
-  Artemis Redboard @ 400KHz (Core v2.1.0) 
+  Artemis RedBoard @ 400KHz (Core v2.1.0) 
   (note, v2.1.1 has a known issue with clock stretching at 100KHz)  
 
   Do you like this library? Help support SparkFun. Buy a board!
 
-    SparkFun Air Velocity Sensor Breakout - FS3000 (Qwicc)
+    SparkFun Air Velocity Sensor Breakout - FS3000-1005 (Qwiic)
     https://www.sparkfun.com/products/18377
+    
+    SparkFun Air Velocity Sensor Breakout - FS3000-1015 (Qwiic)
+    https://www.sparkfun.com/products/18768
 
   Hardware Connections:
-  Use a qwiic cable to connect from the Redboard Qwiic to the FS3000 breakout (QWIIC).
+  Use a Qwiic cable to connect from the RedBoard Qwiic to the FS3000 breakout (QWIIC).
   You can also choose to wire up the connections using the header pins like so:
 
   ARDUINO --> FS3000
@@ -76,10 +79,11 @@ void loop()
     Serial.print(fs.readRaw()); // note, this returns an int from 0-3686
     
     Serial.print("\tm/s: ");
-    Serial.print(fs.readMetersPerSecond()); // note, this returns a float from 0-7.23
+    Serial.print(fs.readMetersPerSecond()); // note, this returns a float from 0-7.23 for the FS3000-1005, and 0-15 for the FS3000-1015 
     
     Serial.print("\tmph: ");
-    Serial.println(fs.readMilesPerHour()); // note, this returns a float from 0-16.17
+    Serial.println(fs.readMilesPerHour()); // note, this returns a float from 0-16.17 for the FS3000-1005, and 0-33.55 for the FS3000-1015 
     
-    delay(1000); // note, repsone time on the sensor is 125ms
+    
+    delay(1000); // note, reponse time on the sensor is 125ms
 }
