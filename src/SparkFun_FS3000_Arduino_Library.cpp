@@ -136,7 +136,7 @@ float FS3000::readMetersPerSecond() {
     // Find out how many datapoints we have from the conversion graphs (depends on the range).
     // note the datasheet pages 6 and 7 show graphs with difference amounts of datapoints
     // for each range.
-    uint8_t dataPointsNum;
+    uint8_t dataPointsNum = 9; // Default to FS3000_1005 AIRFLOW_RANGE_7_MPS
     if (_range == AIRFLOW_RANGE_7_MPS)
     {
       dataPointsNum = 9;
