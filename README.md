@@ -4,11 +4,11 @@ SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) Arduino Library
 <table class="table table-hover table-striped table-bordered">
   <tr align="center">
    <td><a href="https://www.sparkfun.com/products/18377"><img src="https://cdn.sparkfun.com//assets/parts/1/7/7/5/9/18377-SparkFun_Air_Velocity_Sensor_Breakout_-_FS3000__Qwiic_01.jpg" alt="SparkFun Air Velocity Sensor Breakout - FS3000-1005 (Qwiic)"></a></td>
-   <td><a href="https://www.sparkfun.com/products/18768"><img src="" alt="SparkFun Air Velocity Sensor Breakout - FS3000-1015 (Qwiic)"></a></td>
+   <td><a href="https://www.sparkfun.com/products/18768"><img src="https://cdn.sparkfun.com//assets/parts/1/8/3/2/3/18768-_SEN_SparkFun_Air_Velocity_Sensor-_01.jpg" alt="SparkFun Air Velocity Sensor Breakout - FS3000-1015 (Qwiic)"></a></td>
   </tr>
   <tr align="center">
    <td><i>SparkFun Air Velocity Sensor Breakout <br /> FS3000-1005 (Qwiic) <br /> [ <a href="https://www.sparkfun.com/products/18377">SEN-18377</a> ]</i></td>
-   <td><i>SparkFun Air Velocity Sensor Breakout <br /> FS3000-1015 (Qwiic) <br /> [<a href="https://www.sparkfun.com/products/18768">SEN-18768</a> ]</i></td>
+   <td><i>SparkFun Air Velocity Sensor Breakout <br /> FS3000-1015 (Qwiic) <br /> [ <a href="https://www.sparkfun.com/products/18768">SEN-18768</a> ]</i></td>
   </tr>
 </table>
 
