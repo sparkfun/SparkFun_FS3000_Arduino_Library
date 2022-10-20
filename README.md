@@ -12,7 +12,7 @@ SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) Arduino Library
   </tr>
 </table>
 
-The SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) makes it easy to use the Renesas FS3000 module. The FS3000 is a surface-mount type air velocity module utilizing a MEMS thermopile-based sensor. The FS3000 features a digital output with 12-bit resolution. The sensor comprises a �solid� thermal isolation technology and siliconcarbide coating to protect it from abrasive wear and water condensation. The FS3000 features a compact design fit for low profile enclosures.
+The SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) makes it easy to use the Renesas FS3000 module. The FS3000 is a surface-mount type air velocity module utilizing a MEMS thermopile-based sensor. The FS3000 features a digital output with 12-bit resolution. The sensor comprises a "solid" thermal isolation technology and siliconcarbide coating to protect it from abrasive wear and water condensation. The FS3000 features a compact design fit for low profile enclosures.
 
 There are two versions of this sensor with different upper ranges (1005/1015). This SparkFun product breaks out both versions on separate breakout boards: the 1005 version which can sense 0-7.23m/s (0-16.17mph) and 1015 version which can sense 0-15m/s (0-33.6mph).
 
