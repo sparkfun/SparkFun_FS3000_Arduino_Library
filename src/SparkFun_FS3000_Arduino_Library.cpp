@@ -208,12 +208,12 @@ float FS3000::readMilesPerHour() {
 /*                Read 5 bytes from sensor, put it at a pointer (given as argument)                  */
 void FS3000::readData(uint8_t* buffer_in) {
     // Wire.reqeustFrom contains the beginTransmission and endTransmission in it. 
-	Wire.requestFrom(FS3000_DEVICE_ADDRESS, 5);  // Request 5 Bytes
+	_i2cPort->.requestFrom(FS3000_DEVICE_ADDRESS, 5);  // Request 5 Bytes
 
   uint8_t i = 0;
-	while(Wire.available())
+	while(_i2cPort->.available())
 	{
-		buffer_in[i] = Wire.read();				// Receive Byte
+		buffer_in[i] = _i2cPort->.read();				// Receive Byte
     i += 1;
 	}
   //Serial.print("i:");
