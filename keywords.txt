@@ -1,20 +1,27 @@
 ######################################################################
 # Syntax Coloring Map for SparkFun FS3000 Sensor Library             #
 ######################################################################
-# Class
-######################################################################
 
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SparkFunFS3000	KEYWORD1
 FS3000	KEYWORD1
+sfDevFS3000	KEYWORD1
+FS3000_range_t	KEYWORD1
 
-######################################################################
-# Methods and Functions
-######################################################################
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
 
 begin	KEYWORD2
+isConnected	KEYWORD2
+setRange	KEYWORD2
+range	KEYWORD2
 readRaw	KEYWORD2
 readMetersPerSecond	KEYWORD2
 readMilesPerHour	KEYWORD2
-setRange	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
@@ -22,3 +29,7 @@ setRange	KEYWORD2
 
 AIRFLOW_RANGE_7_MPS	LITERAL1
 AIRFLOW_RANGE_15_MPS	LITERAL1
+AIRFLOW_RANGE_INVALID	LITERAL1
+SF_FS3000_DEFAULT_ADDRESS	LITERAL1
+kFS3000ValueError	LITERAL1
+kFS3000ErrChecksum	LITERAL1

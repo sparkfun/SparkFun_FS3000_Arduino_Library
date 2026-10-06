@@ -1,49 +1,48 @@
-SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) Arduino Library
-========================================
+# SparkFun Air Velocity Sensor - FS3000 Arduino Library
 
-<table class="table table-hover table-striped table-bordered">
-  <tr align="center">
-   <td><a href="https://www.sparkfun.com/products/18377"><img src="https://cdn.sparkfun.com//assets/parts/1/7/7/5/9/18377-SparkFun_Air_Velocity_Sensor_Breakout_-_FS3000__Qwiic_01.jpg" alt="SparkFun Air Velocity Sensor Breakout - FS3000-1005 (Qwiic)"></a></td>
-   <td><a href="https://www.sparkfun.com/products/18768"><img src="https://cdn.sparkfun.com//assets/parts/1/8/3/2/3/18768-_SEN_SparkFun_Air_Velocity_Sensor-_01.jpg" alt="SparkFun Air Velocity Sensor Breakout - FS3000-1015 (Qwiic)"></a></td>
-  </tr>
-  <tr align="center">
-   <td><i>SparkFun Air Velocity Sensor Breakout <br /> FS3000-1005 (Qwiic) <br /> [ <a href="https://www.sparkfun.com/products/18377">SEN-18377</a> ]</i></td>
-   <td><i>SparkFun Air Velocity Sensor Breakout <br /> FS3000-1015 (Qwiic) <br /> [ <a href="https://www.sparkfun.com/products/18768">SEN-18768</a> ]</i></td>
-  </tr>
-</table>
+SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic)
 
-The SparkFun Air Velocity Sensor Breakout - FS3000 (Qwiic) makes it easy to use the Renesas FS3000 module. The FS3000 is a surface-mount type air velocity module utilizing a MEMS thermopile-based sensor. The FS3000 features a digital output with 12-bit resolution. The sensor comprises a "solid" thermal isolation technology and siliconcarbide coating to protect it from abrasive wear and water condensation. The FS3000 features a compact design fit for low profile enclosures.
+![License](https://img.shields.io/github/license/sparkfun/SparkFun_FS3000_Arduino_Library)
+![Release](https://img.shields.io/github/v/release/sparkfun/SparkFun_FS3000_Arduino_Library)
+![Release Date](https://img.shields.io/github/release-date/sparkfun/SparkFun_FS3000_Arduino_Library)
+![GitHub issues](https://img.shields.io/github/issues/sparkfun/SparkFun_FS3000_Arduino_Library)
 
-There are two versions of this sensor with different upper ranges (1005/1015). This SparkFun product breaks out both versions on separate breakout boards: the 1005 version which can sense 0-7.23m/s (0-16.17mph) and 1015 version which can sense 0-15m/s (0-33.6mph).
+This library provides access to the Renesas FS3000 air velocity sensor through an I2C connection using the SparkFun Qwiic connectors and cables. The FS3000 is a surface-mount type air velocity module utilizing a MEMS thermopile-based sensor, with a digital output at 12-bit resolution.
 
-SparkFun labored with love to create this code. Feel like supporting open source hardware?
-Buy a [board](https://www.sparkfun.com/products/18377) or [two](https://www.sparkfun.com/products/18768) from SparkFun!
+> [!NOTE]
+> Version 2.0 and above of this library is built on the [SparkFun Toolkit](https://github.com/sparkfun/SparkFun_Toolkit), which must also be installed.
+>
+> Sketches written for version 1.x continue to compile. The main class is now `SparkFunFS3000` - the `FS3000` class is still available, but is deprecated. Readings that fail the sensor's checksum now return an error value (`kFS3000ValueError`) instead of the unvalidated data. See the online documentation and examples for further information.
 
-Repository Contents
--------------------
+### Supported Products
 
-* **/examples** - Example code to be used in the Arduino IDE.
-* **/src** - Source files for the library (.cpp, .h).
-* **keywords.txt** - Keywords from this library that will be highlighted in the Arduino IDE.
-* **libaray.properties** - General library properties for the Arduino package manager
+There are two versions of this sensor with different upper ranges (1005/1015). This library is intended for use with the following SparkFun Products - available at [www.sparkfun.com](https://www.sparkfun.com).
 
-Documentation
---------------
+| Product | Description|
+|--|--|
+|[SparkFun Air Velocity Sensor Breakout - FS3000-1005 (Qwiic)](https://www.sparkfun.com/products/18377) | The 1005 version of the FS3000, which can sense 0-7.23m/s (0-16.17mph).|
+|[SparkFun Air Velocity Sensor Breakout - FS3000-1015 (Qwiic)](https://www.sparkfun.com/products/18768) | The 1015 version of the FS3000, which can sense 0-15m/s (0-33.6mph).|
 
-* **[Installing an Arduino Library Guide](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)** - Basic information on how to install an Arduino library.
-* **[Product Repository](https://github.com/sparkfun/SparkFun_Air_Velocity_Sensor_FS3000_Qwiic)** - Main repository for hardware files.
+## Documentation
 
-License Information
--------------------
+|Reference | Description |
+|---|---|
+|[Product Repository](https://github.com/sparkfun/SparkFun_Air_Velocity_Sensor_FS3000_Qwiic)| Hardware GitHub Repository|
+|[SparkFun Air Velocity Sensor - FS3000 Arduino Library](https://github.com/sparkfun/SparkFun_FS3000_Arduino_Library)| Arduino Library - GitHub Repository|
+|[SparkFun Toolkit](https://github.com/sparkfun/SparkFun_Toolkit)| The SparkFun Toolkit library this library depends on|
+|[Installing an Arduino Library Guide](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)| Basic information on how to install an Arduino library|
 
-This product is _**open source**_!
+## Examples
 
-Please review the LICENSE.md file for license information.
+The following examples are provided with the library
 
-If you have any questions or concerns on licensing, please contact technical support on our [SparkFun forums](https://forum.sparkfun.com/viewforum.php?f=152).
+| Example | Description |
+|---|---|
+|[Basic Readings](https://github.com/sparkfun/SparkFun_FS3000_Arduino_Library/blob/main/examples/Example01_BasicReadings/Example01_BasicReadings.ino)| Read the air velocity from the sensor - prints raw data, m/s and mph.|
+|[Error Checking](https://github.com/sparkfun/SparkFun_FS3000_Arduino_Library/blob/main/examples/Example02_ErrorChecking/Example02_ErrorChecking.ino)| Read the air velocity from the sensor, checking the error code returned for each reading.|
 
-Distributed as-is; no warranty is given.
+## License Information
 
-- Your friends at SparkFun.
+This product is ***open source***!
 
-_<COLLABORATION CREDIT>_
+This product is licensed using the [MIT Open Source License](https://opensource.org/license/mit).
